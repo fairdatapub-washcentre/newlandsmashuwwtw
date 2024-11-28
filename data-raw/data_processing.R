@@ -12,6 +12,7 @@ library(openxlsx)
 
 # Read data --------------------------------------------------------------------
 # data_in <- readr::read_csv("data-raw/dataset.csv")
+data_in<- read_excel("data-raw/newlandsmashuwwtw.xlsx")
 # codebook <- readxl::read_excel("data-raw/codebook.xlsx") |>
 #  clean_names()
 
@@ -23,6 +24,6 @@ library(openxlsx)
 usethis::use_data(project, overwrite = TRUE)
 fs::dir_create(here::here("inst", "extdata"))
 readr::write_csv(project,
-                 here::here("inst", "extdata", paste0("project", ".csv")))
+                 here::here("inst", "extdata", paste0("project", ".excel"))
 openxlsx::write.xlsx(project,
                      here::here("inst", "extdata", paste0("project", ".xlsx")))
